@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping(value="/board")
 public class BoardController {
@@ -23,8 +25,9 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String boardList(Model model) {
+    public String boardList(Model model, HttpSession session) {
         model.addAttribute("boardList", boardService.getBoardList());
+        model.addAttribute("user", session.getAttribute("login"));
         return "posts";
     }
 

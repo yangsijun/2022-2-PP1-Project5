@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
+<div>
+  <text class="text-black">${user.getUsername()} 님 안녕하세요.</text>
+  <button type="button" class="btn btn-warning" onclick="location.href='../login/logout'">로그아웃</button>
+</div>
+<br>
 <table class="table table-bordered text-center">
   <th class="table-header col-1">seq</th>
   <th class="table-header col-2">title</th>
