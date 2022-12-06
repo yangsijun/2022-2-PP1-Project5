@@ -13,8 +13,14 @@
         <property name="dataSource" ref="ds" />
     </bean>
 
-    <bean id="dao" class="com.mycompany.myapp.board.BoardDAO">
-        <property name="template" ref="jt" />
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="ds" />
+        <property name="configLocation" value="classpath:mybatis-config.xml" />
+        <property name="mapperLocations" value="classpath:mappers/*-mapper.xml" />
+    </bean>
+
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
     </bean>
 
 </beans>
