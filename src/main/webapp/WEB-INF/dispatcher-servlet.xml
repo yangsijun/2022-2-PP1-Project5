@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:beans="http://www.springframework.org/schema/c" xmlns:bean="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/mvc
@@ -19,4 +20,16 @@
 
     <mvc:resources mapping="/resources/**" location="/resources/" />
     <mvc:resources mapping="/img/**" location="/resources/img/" />
+
+    <bean id="LoginCheckInterceptor" class="com.mycompany.myapp.user.LoginCheckInterceptor" />
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/resources/**"/>
+            <mvc:exclude-mapping path="/img/**"/>
+            <mvc:exclude-mapping path="/login/**"/>
+            <ref bean="LoginCheckInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
