@@ -7,6 +7,11 @@
   <version>1.0-SNAPSHOT</version>
   <name>SpringProject2 Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <properties>
+    <org.springframework-version>4.2.4.RELEASE</org.springframework-version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -17,8 +22,9 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>5.3.23</version>
+      <version>${org.springframework-version}</version>
     </dependency>
+
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
@@ -32,12 +38,12 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>5.3.23</version>
+      <version>${org.springframework-version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>5.3.23</version>
+      <version>${org.springframework-version}</version>
     </dependency>
     <dependency>
       <groupId>org.mybatis</groupId>
@@ -55,8 +61,8 @@
       <version>RELEASE</version>
       <scope>compile</scope>
     </dependency>
-
   </dependencies>
+
   <build>
     <finalName>SpringProject2</finalName>
     <plugins>
