@@ -1,4 +1,4 @@
-package com.mycompany.myapp;
+package com.mycompany.myapp.board;
 
 import com.mycompany.myapp.board.BoardDAO;
 import com.mycompany.myapp.board.BoardService;
