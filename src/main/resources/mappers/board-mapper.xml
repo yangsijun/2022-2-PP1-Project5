@@ -2,18 +2,36 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
     <insert id="insertBoard">
-        insert into Board(title, writer, content) values (#{title},#{writer},#{content})
+        <![CDATA[
+            INSERT INTO Board (title, content, writer)
+            VALUES (#{title}, #{content}, #{writer})
+        ]]>
     </insert>
     <update id="updateBoard">
-        update Board set title=#{title}, content=#{content} where seq=#{seq}
+        <![CDATA[
+            UPDATE Board
+            SET title = #{title}, content = #{content}
+            WHERE seq = #{seq}
+        ]]>
     </update>
     <delete id="deleteBoard">
-        delete from Board where seq=#{seq}
+        <![CDATA[
+            DELETE FROM Board
+            WHERE seq = #{seq}
+        ]]>
     </delete>
     <select id="getBoard" resultType="board">
-        select * from Board where seq=#{seq}
+        <![CDATA[
+            SELECT *
+            FROM Board
+            WHERE seq = #{seq}
+        ]]>
     </select>
     <select id="getBoardList" resultType="board">
-        select * from Board order by seq desc
+        <![CDATA[
+            SELECT *
+            FROM Board
+            ORDER BY seq DESC
+        ]]>
     </select>
 </mapper>
