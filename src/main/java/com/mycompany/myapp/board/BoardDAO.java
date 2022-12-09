@@ -19,15 +19,15 @@ public class BoardDAO {
     @Autowired
     SqlSession sqlSession;
 
-    Connection conn = null;
-    PreparedStatement stmt = null;
-    ResultSet rs = null;
-
-    private final String BOARD_INSERT = "insert into Board(title, writer, content) values (?,?,?)";
-    private final String BOARD_UPDATE = "update Board set title=?, writer=?, content=? where seq=?";
-    private final String BOARD_DELETE = "delete from Board where seq=?";
-    private final String BOARD_GET = "select * from Board where seq=?";
-    private final String BOARD_LIST = "select * from Board order by seq desc";
+//    Connection conn = null;
+//    PreparedStatement stmt = null;
+//    ResultSet rs = null;
+//
+//    private final String BOARD_INSERT = "insert into Board(title, writer, content) values (?,?,?)";
+//    private final String BOARD_UPDATE = "update Board set title=?, writer=?, content=? where seq=?";
+//    private final String BOARD_DELETE = "delete from Board where seq=?";
+//    private final String BOARD_GET = "select * from Board where seq=?";
+//    private final String BOARD_LIST = "select * from Board order by seq desc";
 
     public int insertBoard(BoardVO vo) {
         return sqlSession.insert("Board.insertBoard", vo);
